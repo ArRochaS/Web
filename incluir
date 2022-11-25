@@ -9,26 +9,52 @@ if(isset($_POST['acao']))
     echo "Música inserida com sucesso ";
 }
 ?>
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-        body {background-color: #87CEFA;
-                text-align: left;}
-        p {font-size: 25px;
-        
-          }
-        </style>
-        <title>Cadastro de Categoria</title>
-    </head>
-       <body>
-           <p> Coloque sua Música </p>
+<head>
+    <style>
+    <?php include 'estilo.css'; ?>
+    </style>
+  <title>Cadastro de Categoria</title>
+</head>
+<body>
+    
+<div id="Hear">  
+    <h1 id="AN">Playlists</h1>
+</div>
+    <br>  
+  
+      
+<div class="Nav"> 
+    <div class="buttons">
+        <h3>Visualizar</h3><br>
+    <form method="post">
+       <a href="index.php" class="btn btn-2">Playlist</a><br><br><br>
+    </div>
+</div>
+    
+<div id="Main">
+    <p> Coloque sua Música </p>
        <form method="post">
             <input type="text" name="nome_categoria" required>
             <input type="submit" name="acao" value="Envia">
-        
-        <p align="center">  <a href="index.php"> Home</p>
        </form>
-       </body>
+</div> 
+<div class="ASD">
+    
+    <div class="buttons">
+     <h4>Sua Playlist</h4><br>
+     <a href="incluir.php" class="btn btn-2">Incluir Música</a><br><br>
+     <a href="excluir.php" class="btn btn-2">Excluir Música</a><br><br>
+     <a href="editar.php" class="btn btn-2">Editar Playlist</a> 
+     </div>
+</div>
+    <br> 
+<div id="RDP">
+    <p> Rodapé </p>
+</div>
+  	
+
+
+</body>
 </html>
