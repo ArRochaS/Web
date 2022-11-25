@@ -1,34 +1,35 @@
-<?php
-
-include "conexao.php";
-if(isset($_POST['acao']))
-{
-    $nome_categoria=$_POST['nome_categoria'];
-    $sql=$pdo->prepare("INSERT INTO categoria VALUES(default,?)");
-    $sql->execute(array($nome_categoria));
-    echo "Música inserida com sucesso ";
-}
-?>
-
 <!DOCTYPE html>
+
 <html>
     <head>
+        <meta charset="UTF-8">
+        
         <style>
-        body {background-color: #87CEFA;
-                text-align: left;}
-        p {font-size: 25px;
-        
-          }
+            <?php include "estilo.css";?>
         </style>
-        <title>Cadastro de Categoria</title>
+        <title> Playlist </title>
     </head>
-       <body>
-           <p> Coloque sua Música </p>
-       <form method="post">
-            <input type="text" name="nome_categoria" required>
-            <input type="submit" name="acao" value="Envia">
-        
-        <p align="center">  <a href="index.php"> Home</p>
-       </form>
-       </body>
+    
+   <body>
+       
+    <div id="cabecalho"><h1 id="titulo"> Seja Bem-Vindo a sua Playlist de Músicas </h1></div>
+       
+    <div id="navi"> 
+    <?php
+    
+    echo "<a href=incluir.php> Adicionar nova Música na Playlist </a><br>";
+    echo "<a href=excluir.php> Excluir Música da Playlist </a><br>";
+    echo "<a href=editar.php> Visualizar Playlist </a>";
+     
+     
+    ?>
+    </div>
+    
+    <div id="princ"> <h5>O nav fica na esquerda</h5></div>
+    <p id="um"> Aqui você pode ver suas playlists, adicionar e excluir suas músicas.</p><br>
+    <p> Menu </p><br>
+    
+   <p> 
+   </p><br>
+   </body>
 </html>
