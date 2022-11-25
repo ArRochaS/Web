@@ -1,35 +1,57 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        
-        <style>
-            <?php include "estilo.css";?>
-        </style>
-        <title> Playlist </title>
-    </head>
+<head>
+    <style>
+    <?php include 'estilo.css'; ?>
+    </style>
+  <title>Mockup</title>
+</head>
+<body>
     
-   <body>
-       
-    <div id="cabecalho"><h1 id="titulo"> Seja Bem-Vindo a sua Playlist de Músicas </h1></div>
-       
-    <div id="navi"> 
-    <?php
-    
-    echo "<a href=incluir.php> Adicionar nova Música na Playlist </a><br>";
-    echo "<a href=excluir.php> Excluir Música da Playlist </a><br>";
-    echo "<a href=editar.php> Visualizar Playlist </a>";
-     
-     
-    ?>
+<div id="Hear">  
+    <h1 id="AN">Playlists</h1>
+</div>
+    <br>  
+  
+      
+<div class="Nav"> 
+    <div class="buttons">
+        <h3>Visualizar</h3><br>
+    <form method="post">
+       <a href="index.php" class="btn btn-2">Playlist</a><br><br><br>
     </div>
+</div>
     
-    <div id="princ"> <h5>O nav fica na esquerda</h5></div>
-    <p id="um"> Aqui você pode ver suas playlists, adicionar e excluir suas músicas.</p><br>
-    <p> Menu </p><br>
+<div id="Main">
+    <table id="Main">
+        <td><th>
+        <?php
+        include "conexao.php";
+        $sql=$pdo->prepare("SELECT * FROM categoria ORDER BY id ASC");
+        $sql->execute();
+        $info=$sql->fetchAll();
+        foreach ($info as $key => $value) {
+        echo $value['id'].'° '.'Música: '.$value['nome_categoria'].'<br>';
+        } 
+        ?>
+        </td></th>
+    </table>
+</div> 
+<div class="ASD">
     
-   <p> 
-   </p><br>
-   </body>
+    <div class="buttons">
+     <h4>Sua Playlist</h4><br>
+     <a href="incluir.php" class="btn btn-2">Incluir Música</a><br><br>
+     <a href="excluir.php" class="btn btn-2">Excluir Música</a><br><br>
+     <a href="editar.php" class="btn btn-2">Editar Playlist</a> 
+     </div>
+</div>
+    <br> 
+<div id="RDP">
+    <p> Rodapé </p>
+</div>
+  	
+
+
+</body>
 </html>
